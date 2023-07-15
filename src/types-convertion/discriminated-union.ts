@@ -5,6 +5,7 @@ type Events =
   | { type: 'scroll'; window: 'this window is scroll' };
 
 type ClickEvent = Extract<Events, { type: 'click' }>;
+type EventType = Events['type'];
 
 type CarBrands = 'toyota' | 'honda' | 'bmw' | 'gmc';
 type JapaneseCarBrands = Extract<CarBrands, 'toyota' | 'honda'>;
