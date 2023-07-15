@@ -5,7 +5,7 @@ const SomeData = {
     height: 1.82
   },
   isAdmin: true,
-  id: 'ID'
+  id: 'ID' as const
 };
 
 type SomeDataType = typeof SomeData;
