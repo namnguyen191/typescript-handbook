@@ -8,3 +8,4 @@ type ClickEvent = Extract<Events, { type: 'click' }>;
 
 type CarBrands = 'toyota' | 'honda' | 'bmw' | 'gmc';
 type JapaneseCarBrands = Extract<CarBrands, 'toyota' | 'honda'>;
+type NonJapaneseCarBrands = Exclude<CarBrands, 'toyota' | 'honda'>;
