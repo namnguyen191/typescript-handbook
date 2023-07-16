@@ -30,3 +30,5 @@ type NonScienceProgramKey = Exclude<
   'EECS' | 'MECH'
 >;
 type NonScienceProgram = (typeof ProgramCodeEnum)[NonScienceProgramKey];
+
+type test = (typeof ProgramCodeEnum)[keyof typeof ProgramCodeEnum ];
