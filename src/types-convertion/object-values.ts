@@ -15,3 +15,18 @@ type Age = SomeDataType['age'];
 type Height = SomeDataType['body']['height'];
 type IsAdmin = SomeDataType['isAdmin'];
 type Id = SomeDataType['id'];
+
+const ProgramCodeEnum = {
+  EECS: 'eecs',
+  MECH: 'mech',
+  SOC: 'soc',
+  PSY: 'psy'
+} as const;
+
+type ScienceProgram = (typeof ProgramCodeEnum)['EECS' | 'MECH'];
+
+type NonScienceProgramKey = Exclude<
+  keyof typeof ProgramCodeEnum,
+  'EECS' | 'MECH'
+>;
+type NonScienceProgram = (typeof ProgramCodeEnum)[NonScienceProgramKey];
