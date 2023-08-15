@@ -1,5 +1,3 @@
-import { Join } from 'ts-toolbelt/out/String/Join';
-
 // Literal infer
 const itemNotGettingInferLiteral = <T>(t: T) => ({ item: t });
 const inferItemLiteral = <T extends string | number>(t: T) => ({ item: t });
@@ -110,7 +108,7 @@ const testArrOfLit = arrayOfLiterals([
 
 const createClassNamesFactory =
   <TClasses extends Record<string, string>>(classes: TClasses) =>
-  <TOther extends string[]>(type: keyof TClasses, ...otherClasses: TOther) => {
+  (type: keyof TClasses, ...otherClasses: string[]) => {
     const classList = [classes[type], ...otherClasses];
     return classList.join(' ');
   };

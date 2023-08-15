@@ -309,5 +309,5 @@ const translationsMap = {
   mainBody: 'This is my personal portfolio',
   ad: 'Sponsor by {{sponsor}}'
 } as const;
-const mainHeaderTranslate = translate(translationsMap, 'mainHeader'); // Broke in TS 5
+// const mainHeaderTranslate = translate(translationsMap, 'mainHeader'); // Broke in TS 5.1.6
 const adTranslate = translate(translationsMap, 'ad', { sponsor: 's' });

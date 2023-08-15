@@ -121,3 +121,18 @@ type TestType = {
   };
 };
 type DeepPartialTestType = DeepPartial<TestType>;
+
+class TableWidget {
+  columnsWidgetOption: string[] = [];
+  rowsWidgetOption: string[] = [];
+  colorsWidgetOption: 'light' | 'dark' = 'dark';
+  count: number = 0;
+}
+
+type WidgetOptions<TWidget> = {
+  [Key in keyof TWidget as Key extends `${string}WidgetOption`
+    ? Key
+    : never]: TWidget[Key];
+};
+
+type TableWidgetOptions = WidgetOptions<TableWidget>;
