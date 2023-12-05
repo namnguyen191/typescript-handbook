@@ -54,6 +54,11 @@ type ValuesAsUnionOfTuples = {
   [K in keyof Values]: [K, Values[K]];
 }[keyof Values];
 
+type SantasList<TBad extends readonly any[], TGood extends readonly any[]> = [...TBad,...TGood];
+const bads = ['tommy', 'trash'] as const;
+const goods = ['bash', 'tru'] as const;
+type FullList = SantasList<typeof bads, typeof goods>;
+
 type FruitMap = {
   apple: 'red';
   banana: 'yellow';
