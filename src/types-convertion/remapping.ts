@@ -141,3 +141,10 @@ type WidgetOptions<TWidget> = {
 };
 
 type TableWidgetOptions = WidgetOptions<TableWidget>;
+
+// string to number mapping
+type FindSanta<T extends readonly ('🎄' | '🎅🏼')[]> =  keyof {
+	[K in keyof T as T[K] extends '🎅🏼' ? K : never]: K
+} extends `${infer N extends number}` ? N : never;
+type Forest0 = ['🎅🏼', '🎄', '🎄', '🎄'];
+type test_0_actual = FindSanta<Forest0>;
